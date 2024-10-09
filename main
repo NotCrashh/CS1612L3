@@ -1,0 +1,26 @@
+# Sam Gustafson
+# Lab Assignment 3
+# Oct. 8th, 2024
+
+import csv
+
+# Data to be written
+header = ["name", "Age", "Occupation"]
+data = [
+    ["Bob", "22", "Software Engineer"],
+    ["Jeff", "32", "Cyber Security"],
+    ["Steve", "24", "Data Science"]
+]
+
+# Writing to CSV file
+filename = "people.csv"
+with open(filename, mode="w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(header)
+    writer.writerows(data)
+
+# Reading from the CSV file and displaying contents
+with open(filename, mode="r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
